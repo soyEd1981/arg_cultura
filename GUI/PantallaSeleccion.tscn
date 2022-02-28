@@ -1,0 +1,285 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/UI Adventure Pack/PNG/panelInset_beige.png" type="Texture" id=1]
+[ext_resource path="res://assets/Fonts/Cardinal.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GUI/PantallaSeleccion.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.756863, 0.635294, 0.443137, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.756863, 0.635294, 0.443137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.756863, 0.635294, 0.443137, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=11]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="Pantallaseleccion" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="Fondo"]
+anchor_left = 0.253
+anchor_top = 0.064
+anchor_right = 0.799
+anchor_bottom = 0.124
+margin_left = -0.240021
+margin_top = 0.119995
+margin_right = -45.9201
+margin_bottom = -37.08
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Hoja de personaje"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NombrePersonaje" type="LineEdit" parent="Fondo"]
+anchor_left = 0.210185
+anchor_top = 0.169271
+anchor_right = 0.817
+anchor_bottom = 0.205271
+margin_right = -0.360016
+margin_bottom = -0.120003
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Tu nombre"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SelectorTipo" type="OptionButton" parent="Fondo"]
+anchor_left = 0.222
+anchor_top = 0.231
+anchor_right = 0.822
+anchor_bottom = 0.271
+margin_left = 0.239975
+margin_top = -0.52002
+margin_right = 0.23999
+margin_bottom = 0.679932
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+text = "Razonable"
+items = [ "Razonable", null, false, 0, null, "Vigilante", null, false, 1, null, "Exploradora", null, false, 2, null, "Persuasiva", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoAtributos" type="Label" parent="Fondo"]
+anchor_left = 0.421296
+anchor_top = 0.301042
+anchor_right = 0.612
+anchor_bottom = 0.342
+margin_right = -47.96
+margin_bottom = -19.6401
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Atributos"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ContenedorAtributos" type="GridContainer" parent="Fondo"]
+anchor_left = 0.127778
+anchor_top = 0.341667
+anchor_right = 0.960815
+anchor_bottom = 0.467542
+margin_right = -26.6804
+margin_bottom = 0.319275
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextoPensamiento" type="Label" parent="Fondo/ContenedorAtributos"]
+margin_right = 342.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Pensamiento: 0"
+
+[node name="TextoVivacidad" type="Label" parent="Fondo/ContenedorAtributos"]
+margin_left = 346.0
+margin_right = 646.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Vivacidad: 0"
+
+[node name="TextoCaracter" type="Label" parent="Fondo/ContenedorAtributos"]
+margin_top = 82.0
+margin_right = 342.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Carácter: 0"
+
+[node name="TextoEstrategia" type="Label" parent="Fondo/ContenedorAtributos"]
+margin_left = 346.0
+margin_top = 82.0
+margin_right = 646.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Estrategia: 0"
+
+[node name="TextoAutenticidad" type="Label" parent="Fondo/ContenedorAtributos"]
+margin_top = 164.0
+margin_right = 342.0
+margin_bottom = 242.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Autenticidad: 0"
+
+[node name="TextoRasgos" type="Label" parent="Fondo"]
+anchor_left = 0.369444
+anchor_top = 0.497917
+anchor_right = 0.742074
+anchor_bottom = 0.53877
+margin_right = -0.440002
+margin_bottom = -0.439392
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Rasgos biográficos"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ContenedorRasgos" type="VBoxContainer" parent="Fondo"]
+anchor_left = 0.112815
+anchor_top = 0.557292
+anchor_right = 0.911815
+anchor_bottom = 0.769
+margin_left = 0.159988
+margin_right = 0.239929
+margin_bottom = -0.480103
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Fortaleza" type="LineEdit" parent="Fondo/ContenedorRasgos"]
+margin_right = 863.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Fortaleza"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Debilidad" type="LineEdit" parent="Fondo/ContenedorRasgos"]
+margin_top = 82.0
+margin_right = 863.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Debilidad"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Miedo" type="LineEdit" parent="Fondo/ContenedorRasgos"]
+margin_top = 164.0
+margin_right = 863.0
+margin_bottom = 242.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Miedo"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Interes" type="LineEdit" parent="Fondo/ContenedorRasgos"]
+margin_top = 246.0
+margin_right = 863.0
+margin_bottom = 324.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Interés"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Estilo" type="LineEdit" parent="Fondo/ContenedorRasgos"]
+margin_top = 328.0
+margin_right = 863.0
+margin_bottom = 406.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+max_length = 32
+placeholder_text = "Describe en una sola palabra tu estilo"
+placeholder_alpha = 0.7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="item_selected" from="Fondo/SelectorTipo" to="." method="_on_SelectorTipo_item_selected"]
